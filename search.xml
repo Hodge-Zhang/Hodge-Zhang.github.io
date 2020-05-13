@@ -1,3 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
+  <entry>
+    <title>Markdown 基础使用</title>
+    <url>/2020/05/13/Markdown%E2%80%94%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>如今，不少内容发布者都使用Markdown 发布内容，而我昨天刚建的基于<code>hexo</code>的博客，也需要使用Markdown，鉴于最近才真正接触Markdown，所以在建站完成伊始先写篇博客总结下Markdown 的使用规则及技巧。</p>
+<h2 id="1-Markdown简介"><a href="#1-Markdown简介" class="headerlink" title="1. Markdown简介"></a>1. Markdown简介</h2><p>Markdown是一种轻量级的<code>标记语言</code>，由John Gruber在2004年创建，其核心思想是格式与内容分离，这也符合今天网页的思想。它允许人们使用纯文本格式编写文档，使用Markdown编写的文档可以导出html、word、图像、pdf、epub 等多种格式的文档，常用来发布博客内容。Markdown 文档的后缀为<code>.md</code>或者<code>.markdown</code>。</p>
+<h2 id="2-Markdown基础语法"><a href="#2-Markdown基础语法" class="headerlink" title="2. Markdown基础语法"></a>2. Markdown基础语法</h2><p>基础语法包括“标题”、“字体”、“列表”、“区块”，“代码”，“链接”，“图片”，“表格”这8大部分，能满足绝大多数文章的写作需求。</p>
+<h3 id="2-1-标题"><a href="#2-1-标题" class="headerlink" title="2.1 标题"></a>2.1 标题</h3><p>共有6种级别的标题，用<code>#</code>标识，注意<code>#</code>与标题之间应有一个空格,接下来的内容也有注意区分语法中有无空格。一级标题后面会有一条分隔线。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h3 id="2-2-字体"><a href="#2-2-字体" class="headerlink" title="2.2 字体"></a>2.2 字体</h3><p>Markdown段落没有特殊的格式，直接编写文字即可。段落的换行是两个以上的空格+回车，当然也可以在段落后面直接使用一个空行表示重新开始一个段落。事实上，很多版本直接回车也是可以的。</p>
+<p>Markdown的字体格式主要是“斜体”，“加粗”，此外还有一些格式如“下划线”，“删除线”，“分隔线”等。</p>
+<p>下划线：实际上使用的是HTML里的<code>&lt;u&gt;</code>标签实现的。</p>
+<p>删除线：文字两端分别加上两个波浪线<code>~</code>。</p>
+<p>分隔线：在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西，也可以在星号或是减号中间插入空格。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="emphasis">*斜体文本一*</span></span><br><span class="line"><span class="emphasis">_斜体文本二_</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**粗体文本一**</span></span><br><span class="line"><span class="strong">__粗体文本二__</span></span><br><span class="line"></span><br><span class="line"><span class="strong">***粗斜体文本一**</span>*</span><br><span class="line"><span class="strong">___粗斜体文本二__</span>_</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="bullet">- </span>- - - - -</span><br><span class="line"></span><br><span class="line"><span class="emphasis">***</span></span><br><span class="line"><span class="bullet">* </span><span class="emphasis">* *</span> <span class="emphasis">* *</span> *</span><br><span class="line"></span><br><span class="line">~~删除线~~ </span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线<span class="xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><em>斜体文本一</em><br><em>斜体文本二</em></p>
+<p><strong>粗体文本一</strong><br><strong>粗体文本二</strong></p>
+<p><strong><em>粗斜体文本一</em></strong><br><strong><em>粗斜体文本二</em></strong></p>
+<p><del>删除线</del></p>
+<p><u>下划线</u></p>
+<hr>
+<h3 id="2-3-列表"><a href="#2-3-列表" class="headerlink" title="2.3 列表"></a>2.3 列表</h3><p>列表分有序列表和无须列表，前者使用形如<code>1.</code>直接标识，后者使用<code>*</code>、<code>+</code>或者<code>-</code>来标识。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">* </span>第一项</span><br><span class="line"><span class="bullet">* </span>第二项</span><br><span class="line"><span class="bullet">* </span>第三项</span><br><span class="line"></span><br><span class="line"><span class="bullet">+ </span>第一项</span><br><span class="line"><span class="bullet">+ </span>第二项</span><br><span class="line"><span class="bullet">+ </span>第三项</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>第一项</span><br><span class="line"><span class="bullet">- </span>第二项</span><br><span class="line"><span class="bullet">- </span>第三项</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>第一项：</span><br><span class="line"><span class="bullet">    - </span>第一项嵌套的第一个元素</span><br><span class="line"><span class="bullet">    - </span>第一项嵌套的第二个元素</span><br><span class="line"><span class="bullet">2. </span>第二项：</span><br><span class="line"><span class="bullet">    - </span>第二项嵌套的第一个元素</span><br><span class="line"><span class="bullet">    - </span>第二项嵌套的第二个元素</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<ol>
+<li>第一项：<ul>
+<li>第一项嵌套的第一个元素</li>
+<li>第一项嵌套的第二个元素</li>
+</ul>
+</li>
+<li>第二项：<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="2-4-区块"><a href="#2-4-区块" class="headerlink" title="2.4 区块"></a>2.4 区块</h3><p>Markdown 区块引用是在段落开头使用 <code>&gt;</code>符号 ，然后后面紧跟一个空格。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用1</span></span><br><span class="line"><span class="quote">&gt; 引用2</span></span><br><span class="line"></span><br><span class="line"><span class="quote">&gt; 最外层</span></span><br><span class="line">&gt;&gt; 嵌套1</span><br><span class="line">&gt;&gt;&gt; 嵌套2</span><br><span class="line">&gt;&gt;&gt; - 第一项</span><br><span class="line">&gt;&gt;&gt; - 第二项</span><br><span class="line">&gt;&gt;&gt; - 第三项</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>最外层</p>
+<blockquote>
+<p>嵌套1</p>
+<blockquote>
+<p>嵌套2</p>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<h3 id="2-5-代码"><a href="#2-5-代码" class="headerlink" title="2.5 代码"></a>2.5 代码</h3><p>如果是段落上的一个函数或片段的代码可以用反引号`把它包起来，如果是代码块可以在其前后两行分别使用```来包裹，也可选择在前面指定编程语言。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">​</span><br></pre></td></tr></table></figure>
+<p>// your code is here<br>int main(int argc,char*argv[]){<br>    std::cout&lt;&lt;”hello world”&lt;&lt;std::endl;<br>    for(int i=0;i&lt;argc;i++){<br>        std::cout&lt;&lt;argv[i]&lt;&lt;std::endl;<br>    }<br>    return 0;<br>}<br>​```</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;C++</span><br><span class="line">&#x2F;&#x2F; your code is here</span><br><span class="line">int main(int argc,char*argv[])&#123;</span><br><span class="line">    std::cout&lt;&lt;&quot;hello world&quot;&lt;&lt;std::endl;</span><br><span class="line">    for(int i&#x3D;0;i&lt;argc;i++)&#123;</span><br><span class="line">        std::cout&lt;&lt;argv[i]&lt;&lt;std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-6-链接"><a href="#2-6-链接" class="headerlink" title="2.6 链接"></a>2.6 链接</h3><p>链接使用方法如下：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接名称</span>](<span class="link">链接地址</span>)</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">直接使用链接地址</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">[<span class="string">My Blob</span>](<span class="link">https://hodge-zhang.gitee.io/</span>)</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">https:</span>//<span class="attr">hodge-zhang.github.io</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><a href="https://hodge-zhang.gitee.io/" target="_blank" rel="noopener">My Blob</a></p>
+<p><a href="https://hodge-zhang.github.io/" target="_blank" rel="noopener">https://hodge-zhang.github.io/</a></p>
+<hr>
+<h3 id="2-7-图片"><a href="#2-7-图片" class="headerlink" title="2.7 图片"></a>2.7 图片</h3><p>Markdown 图片语法格式如下：</p>
+<ul>
+<li>开头一个感叹号<code>！</code></li>
+<li>接着一个方括号，里面放上图片无法加载时的替代文字，<code>[alt 属性文本]</code></li>
+<li>最后是一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的<code>title</code> 属性的文字，(图片地址 “可选title”)</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">生命不息</span>](<span class="link">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/bycle.jpg "生命"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/bycle.jpg" alt="生命不息" title="生命"></p>
+<p>值得注意的是，Markdown写作的一个痛点就是图片的嵌入，它不像<code>.docx</code>那样文字与图片一起编码成一个独立的文件，Markdown是从外部通过统一资源定位符<code>URL</code>引入，这意味着带图片的Markdown文章要想在互联网上发布并被不同的人完整的看到，其图片必须在某个服务器上，由服务器来管理图片资源，管理图片的服务器就是图床了，目前我所使用的是阿里云的OSS自建的图床，从上面图片的链接中也可以看出来。关于图床的使用可以单独发出一篇文章来讲，这里就不多说了。</p>
+<h3 id="2-8-表格"><a href="#2-8-表格" class="headerlink" title="2.8 表格"></a>2.8 表格</h3><p>Markdown 制作表格使用 <code>|</code> 来分隔不同的单元格，使用<code>-</code>来分隔表头和其他行。同时我们也可以设置表格的对齐对齐方式：</p>
+<ul>
+<li><code>-:</code>设置内容和标题栏居右对齐。</li>
+<li><code>:-</code> 设置内容和标题栏居左对齐。</li>
+<li><code>:-:</code> 设置内容和标题栏居中对齐。</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 左对齐 | 居中对齐 | 右对齐 |</span><br><span class="line">| :-----| :---: | ----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
+
+<hr>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="center">居中对齐</th>
+<th align="right">右对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="center">单元格</td>
+<td align="right">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="center">单元格</td>
+<td align="right">单元格</td>
+</tr>
+</tbody></table>
+<hr>
+<p>从Markdown表格源码中可以看到使用Markdown制作表格比较麻烦的，实际写作过程中，像制作表格、绘制流程图、绘制时序图等一般借助第三方工具完成。</p>
+<h2 id="3-Markdown-相关工具"><a href="#3-Markdown-相关工具" class="headerlink" title="3. Markdown 相关工具"></a>3. Markdown 相关工具</h2><p>作为一种使用了十几年的工具，基于Markdown也衍生出了很多的工具，这里只推荐我所使用的。</p>
+<ul>
+<li>编辑工具：<a href="https://typora.io/" target="_blank" rel="noopener">Typora</a>，这篇文章即是使用这个工具写的，软件做的很棒，堪称优雅。</li>
+<li>图片管理：<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo</a>，功能齐全的图片管理工具，支持大多数图床，和Typora完美适配。</li>
+<li>自建图床：<a href="https://cn.aliyun.com/" target="_blank" rel="noopener">阿里云</a>，作为国内商业化最好的云产品，40G OSS对象存储空间一年只需9RMB，是建立自己的云的不二之选了。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
 </search>
