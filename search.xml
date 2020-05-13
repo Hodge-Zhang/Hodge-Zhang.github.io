@@ -201,9 +201,12 @@
     <content><![CDATA[<h3 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h3><p>执行<code>hexo g</code>生成静态网页时出错：</p>
 <figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">YAMLException: end of the stream or a document separator is expected at line x, column y: ...</span></span><br></pre></td></tr></table></figure>
 
-<p>原因：hexo <code>_posts</code>文件夹内的<code>.md</code>文件头部应该有一些<code>meta</code>信息的，这些信息在执行命令<code>hexo n filename</code>创建新的文章时会自动加上，但若直接从外部创建一个Markdown文件到<code>_posts</code>文件夹内，然后执行命令创建静态网页时就会因为得不到相关信息报以上的错误。</p>
+<p>原因：hexo <code>_posts</code>文件夹内的<code>.md</code>文件头部应该有一些头部<code>meta</code>信息来初始化一些配置的变量，这些信息在执行命令<code>hexo n filename</code>创建新的文章时会自动加上，但若直接从外部创建一个Markdown文件到<code>_posts</code>文件夹内，然后执行命令创建静态网页时就会因为得不到相关信息报以上的错误。</p>
 <p>比如<code>diaspora</code>主题的头部信息为：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: My awesome title</span><br><span class="line">date: 2020-1-12 18:38:45</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">    - </span>分类1</span><br><span class="line"><span class="bullet">    - </span>分类2</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">    - </span>标签1</span><br><span class="line"><span class="bullet">    - </span>标签2</span><br><span class="line">mp3: http://domain.com/awesome.mp3</span><br><span class="line">cover: http://domain.com/awesome-cover.png</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: My awesome title</span><br><span class="line">date: 2020-1-12 18:38:45</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">    - </span>分类1</span><br><span class="line"><span class="bullet">    - </span>分类2</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">    - </span>标签1</span><br><span class="line"><span class="bullet">    - </span>标签2</span><br><span class="line">mp3: http://domain.com/awesome.mp3</span><br><span class="line">cover: http://domain.com/awesome-cover.png</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="noopener">更多关于hexo头部信息的内容</a></p>
+]]></content>
       <categories>
         <category>技术</category>
       </categories>
