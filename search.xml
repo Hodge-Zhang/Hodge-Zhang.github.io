@@ -212,8 +212,14 @@
       </tags>
   </entry>
   <entry>
-    <title>用Pthreads进行共享内存编程</title>
+    <title>Pthread共享内存编程</title>
     <url>/2020/05/14/%E7%94%A8Pthreads%E8%BF%9B%E8%A1%8C%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="holding"><a href="#holding" class="headerlink" title="holding"></a>holding</h2>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Pthread</tag>
+      </tags>
   </entry>
 </search>
