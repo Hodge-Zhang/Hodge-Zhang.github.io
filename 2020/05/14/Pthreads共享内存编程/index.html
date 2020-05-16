@@ -10,8 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hodge,"> 
-    <meta name="description" content="[TOC]
-前言：本篇文章主要介绍下使用POSIX线程库，即Pthread在共享内存系统中进行多线程编程的基础范式，涉及的Pthread中的互斥量pthread_mutex_t、条件变量pthrea,"> 
+    <meta name="description" content="前言：本篇文章主要介绍下使用POSIX线程库，即Pthread在共享内存系统中进行多线程编程的基础范式，涉及的Pthread中的互斥量pthread_mutex_t、条件变量pthread_cond,"> 
     <meta name="author" content="Hodge-Zhang"> 
     <link rel="alternative" href="atom.xml" title="Hodge-Zhang" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -63,8 +62,7 @@
 
         </div>
         <div class="content markdown">
-            <p>[TOC]</p>
-<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>本篇文章主要介绍下使用POSIX线程库，即Pthread在<code>共享内存系统</code>中进行多线程编程的基础范式，涉及的Pthread中的互斥量<code>pthread_mutex_t</code>、条件变量<code>pthread_cond_t</code>以及<code>&lt;semaphore.h&gt;</code>中的信号量的基础使用。主要参考Peter S.Pacheco所著的《An Introduction to Parallel Programming》。在正文开始之前，有必要回顾以下概念：</p>
+            <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>本篇文章主要介绍下使用POSIX线程库，即Pthread在<code>共享内存系统</code>中进行多线程编程的基础范式，涉及的Pthread中的互斥量<code>pthread_mutex_t</code>、条件变量<code>pthread_cond_t</code>以及<code>&lt;semaphore.h&gt;</code>中的信号量的基础使用。主要参考Peter S.Pacheco所著的《An Introduction to Parallel Programming》。在正文开始之前，有必要回顾以下概念：</p>
 <ul>
 <li><code>共享内存系统</code>：共享内存系统中的任意处理器核都能够访问所有的内存区域。因此，协调各个处理器核工作的一个方法，就是把某个内存区域设为“共享”，这是并行编程中常见的方法。</li>
 </ul>
@@ -295,25 +293,6 @@
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
-        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
-        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
-        messageStyle: "none"
-    });
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 
