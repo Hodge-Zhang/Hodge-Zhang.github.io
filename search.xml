@@ -3,14 +3,23 @@
   <entry>
     <title>hexo问题记录</title>
     <url>/2020/05/13/hexo%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h3 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h3><p>执行<code>hexo g</code>生成静态网页时出错：</p>
+    <content><![CDATA[<h4 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h4><p>URL中有空格的话，在HTML中将会被截断，如下图的图片链接：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">The Elephant</span>](<span class="link">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/The Elephant.jpg "大象群"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>![The Elephant](<a href="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/The" target="_blank" rel="noopener">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/The</a> Elephant.jpg “大象群”)</p>
+<p>可以用<code>+</code>或者<code>%20</code>代替URL中的空格<code></code>：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">The Elephant</span>](<span class="link">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/The+Elephant.jpg "大象群"</span>)</span><br><span class="line"></span><br><span class="line">![<span class="string">The Elephant</span>](<span class="link">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/The%20Elephant.jpg "大象群"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/The%20Elephant.jpg" alt="The Elephant" title="大象群"></p>
+<p><a href="https://stackoverflow.com/questions/1634271/url-encoding-the-space-character-or-20" target="_blank" rel="noopener">更多关于URL中的空格的内容……</a></p>
+<h4 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h4><p>执行<code>hexo g</code>生成静态网页时出错：</p>
 <figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">YAMLException: end of the stream or a document separator is expected at line x, column y: ...</span></span><br></pre></td></tr></table></figure>
 
 <p>原因：hexo <code>_posts</code>文件夹内的<code>.md</code>文件头部应该有一些头部<code>meta</code>信息来初始化一些配置的变量，这些信息在执行命令<code>hexo n filename</code>创建新的文章时会自动加上，但若直接从外部创建一个Markdown文件到<code>_posts</code>文件夹内，然后执行命令创建静态网页时就会因为得不到相关信息报以上的错误。</p>
 <p>比如<code>diaspora</code>主题的头部信息为：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: My awesome title</span><br><span class="line">date: 2020-1-12 18:38:45</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">    - </span>分类1</span><br><span class="line"><span class="bullet">    - </span>分类2</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">    - </span>标签1</span><br><span class="line"><span class="bullet">    - </span>标签2</span><br><span class="line">mp3: http://domain.com/awesome.mp3</span><br><span class="line">cover: http://domain.com/awesome-cover.png</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="noopener">更多关于hexo头部信息的内容</a></p>
+<p><a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="noopener">更多关于hexo头部信息的内容……</a></p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -1111,7 +1120,7 @@
 <p>序列号的作用是使得一个 TCP 接收端可丢弃重复的报文段，记录以杂乱次序到达的报文段。因为 TCP 使用 IP 来传输报文段，而IP 不提供重复消除或者保证次序正确的功能。</p>
 <p>另一方面，TCP 是一个字节流协议，绝不会以杂乱的次序给上层程序发送数据。因此 TCP 接收端会被迫先保持大序列号的数据不交给应用程序，直到缺失的小序列号的报文段被填满。</p>
 <h4 id="4、TCP-的三次握手（为什么三次？）"><a href="#4、TCP-的三次握手（为什么三次？）" class="headerlink" title="4、TCP 的三次握手（为什么三次？）"></a>4、TCP 的三次握手（为什么三次？）</h4><p>三次握手：</p>
-<p>![tcp-build-link](<a href="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp" target="_blank" rel="noopener">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp</a> build link.jpg “TCP三次握手建立连接”)</p>
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp+build+link.jpg" alt="tcp-build-link" title="TCP三次握手建立连接"></p>
 <p>假设 A 为客户端，B 为服务器端。</p>
 <p>首先 B 处于 LISTEN（监听）状态，等待客户的连接请求。</p>
 <ul>
@@ -1134,7 +1143,7 @@
 <p>其实每次收到网络包的一方至少是可以得到：对方的发送、我方的接收是正常的。而每一步都是有关联的，下一次的“响应”是由于第一次的“请求”触发，因此每次握手其实是可以得到额外的结论的。</p>
 <p>比如第三次握手时，服务端收到数据包，表明看服务端只能得到客户端的发送能力、服务端的接收能力是正常的，但是结合第二次，说明服务端在第二次发送的响应包，客户端接收到了，并且作出了响应，从而得到额外的结论：客户端的接收、服务端的发送是正常的。</p>
 <h4 id="5、TCP-的四次挥手（为什么四次？）"><a href="#5、TCP-的四次挥手（为什么四次？）" class="headerlink" title="5、TCP 的四次挥手（为什么四次？）"></a>5、TCP 的四次挥手（为什么四次？）</h4><p>四次挥手：</p>
-<p>![tcp-finish-link](<a href="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp" target="_blank" rel="noopener">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp</a> finish link.jpg “TCP四次挥手结束连接”)</p>
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp+finish+link.jpg" alt="tcp-finish-link" title="TCP四次挥手结束连接"></p>
 <ul>
 <li>客户端发送一个 FIN 段，并包含一个希望接收者看到的自己当前的序列号 K. 同时还包含一个 ACK 表示确认对方最近一次发过来的数据。</li>
 <li>服务端将 K 值加 1 作为 ACK 序号值，表明收到了上一个包。这时上层的应用程序会被告知另一端发起了关闭操作，通常这将引起应用程序发起自己的关闭操作。</li>
@@ -1165,12 +1174,12 @@
 <p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp%E7%B2%98%E5%8C%85%E6%8B%86%E5%8C%85.png" alt="tcp粘包拆包" title="TCP粘包拆包"></p>
 <p>假设 Client 向 Server 连续发送了两个数据包，用 packet1 和 packet2 来表示，那么服务端收到的数据可以分为三种情况，现列举如下：</p>
 <p>第一种情况，接收端正常收到两个数据包，即没有发生拆包和粘包的现象。</p>
-<p>![tcp-pk](<a href="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp" target="_blank" rel="noopener">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp</a> pk.png “正常发送”)</p>
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp+pk.png" alt="tcp-pk" title="正常发送"></p>
 <p>第二种情况，接收端只收到一个数据包，但是这一个数据包中包含了发送端发送的两个数据包的信息，这种现象即为粘包。这种情况由于接收端不知道这两个数据包的界限，所以对于接收端来说很难处理。</p>
-<p>![tcp-pk1](<a href="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp" target="_blank" rel="noopener">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp</a> pk1.png “粘包”)</p>
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp+pk1.png" alt="tcp-pk1" title="粘包"></p>
 <p>第三种情况，这种情况有两种表现形式，如下图。接收端收到了两个数据包，但是这两个数据包要么是不完整的，要么就是多出来一块，这种情况即发生了拆包和粘包。这两种情况如果不加特殊处理，对于接收端同样是不好处理的。</p>
-<p>![tcp-pk2](<a href="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp" target="_blank" rel="noopener">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp</a> pk2.png “拆包Packet1”)</p>
-<p>![tcp-pk3](<a href="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp" target="_blank" rel="noopener">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp</a> pk3.png “拆包Packet2”)</p>
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp+pk2.png" alt="tcp-pk2" title="拆包Packet1"></p>
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/tcp+pk3.png" alt="tcp-pk3" title="拆包Packet2"></p>
 <p><strong>为什么会发生 TCP 粘包、拆包？</strong></p>
 <ul>
 <li>要发送的数据大于 TCP 发送缓冲区剩余空间大小，将会发生拆包。</li>
