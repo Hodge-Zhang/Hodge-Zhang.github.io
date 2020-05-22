@@ -1255,10 +1255,31 @@
       </tags>
   </entry>
   <entry>
+    <title>文摘2020</title>
+    <url>/2020/05/22/%E6%96%87%E6%91%982020/</url>
+    <content><![CDATA[<p>1、哲学剃刀](<a href="https://zh.wikipedia.org/wiki/哲学剃刀" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/哲学剃刀</a>)</p>
+<p>“剃刀”（razor）这个词，在哲学里面有特殊含义，指的是一种经验法则，可以对某种现象做出简洁的解释，消除了其他的解释。</p>
+<p>常常被引用的”剃刀”（经验法则）有下面这些。</p>
+<p><strong>奥卡姆剃刀</strong>：更简单的解释更可能是正确的。引申为某个命题成立，所需要的假设越少越好。</p>
+<p><strong>汉隆剃刀</strong>：永远不要将恶意归咎于愚蠢。</p>
+<p><strong>希钦斯剃刀</strong>：凡是无证据的断言，也可以无证据地驳回。</p>
+<p><strong>休谟剃刀</strong>：从一样东西是什么，无法推导出它应该是什么，即无法从事实推导出价值判断。</p>
+<p><strong>牛顿剃刀</strong>：无法通过实验或观察解决的问题，不值得争论。</p>
+<p><strong>萨根标准</strong>：非同寻常的主张，需要非同寻常的证据。</p>
+<p><strong>波普原则</strong>：一个理论被认为是正确的，前提必须是有可能证明它是错误的，即必须是可证伪的。</p>
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/book_high.jpg" alt="about-book" title="以书为阶"></p>
+]]></content>
+      <categories>
+        <category>文摘</category>
+      </categories>
+      <tags>
+        <tag>Digest</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git教程</title>
-    <url>/2020/05/22/Git%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>title: Git教程<br>date: 2020-05-22 18:57:46<br>updated:<br>categories: 技术<br>tags: Git<br>mp3:<br>cover: <a href="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/git-reasons.png" target="_blank" rel="noopener">https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/git-reasons.png</a></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本文主要介绍Git这一版本控制工具的基本使用，重点熟悉<code>Git Bash</code>下的命令。</p>
+    <url>/2020/05/23/Git%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本文主要介绍Git这一版本控制工具的基本使用，重点熟悉<code>Git Bash</code>下的命令。</p>
 <h3 id="1-Git的诞生"><a href="#1-Git的诞生" class="headerlink" title="1. Git的诞生"></a>1. Git的诞生</h3><blockquote>
 <p>很多人都知道，Linus在1991年创建了开源的Linux，从此，Linux系统不断发展，已经成为最大的服务器系统软件了。</p>
 <p>Linus虽然创建了Linux，但Linux的壮大是靠全世界热心的志愿者参与的，这么多人在世界各地为Linux编写代码，那Linux的代码是如何管理的呢？</p>
@@ -1357,31 +1378,11 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成一个可供发布的压缩包</span></span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
 </blockquote>
 ]]></content>
-  </entry>
-  <entry>
-    <title>文摘2020</title>
-    <url>/2020/05/22/%E6%96%87%E6%91%982020/</url>
-    <content><![CDATA[<ol start="2">
-<li></li>
-<li><p>、<a href="https://zh.wikipedia.org/wiki/哲学剃刀" target="_blank" rel="noopener">哲学剃刀</a></p>
-<p>“剃刀”（razor）这个词，在哲学里面有特殊含义，指的是一种经验法则，可以对某种现象做出简洁的解释，消除了其他的解释。</p>
-<p>常常被引用的”剃刀”（经验法则）有下面这些。</p>
-<p><strong>奥卡姆剃刀</strong>：更简单的解释更可能是正确的。引申为某个命题成立，所需要的假设越少越好。</p>
-<p><strong>汉隆剃刀</strong>：永远不要将恶意归咎于愚蠢。</p>
-<p><strong>希钦斯剃刀</strong>：凡是无证据的断言，也可以无证据地驳回。</p>
-<p><strong>休谟剃刀</strong>：从一样东西是什么，无法推导出它应该是什么，即无法从事实推导出价值判断。</p>
-<p><strong>牛顿剃刀</strong>：无法通过实验或观察解决的问题，不值得争论。</p>
-<p><strong>萨根标准</strong>：非同寻常的主张，需要非同寻常的证据。</p>
-<p><strong>波普原则</strong>：一个理论被认为是正确的，前提必须是有可能证明它是错误的，即必须是可证伪的。</p>
-</li>
-</ol>
-<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/book_high.jpg" alt="about-book" title="以书为阶"></p>
-]]></content>
       <categories>
-        <category>文摘</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>Digest</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
 </search>
