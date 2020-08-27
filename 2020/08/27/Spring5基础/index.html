@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spring5基础 - Hodge</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Hodge,"> 
+    <meta name="description" content="Spring 5 基础
+学习资料：尚硅谷-Spring5框架2020最新版教程
+视频链接
+Spring官网
+
+
+1. Spring 概述
+Spring 是轻量级的开源的JavaEE框架
+Spring,"> 
+    <meta name="author" content="Hodge-Zhang"> 
+    <link rel="alternative" href="atom.xml" title="Hodge" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hodge</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://hodge-zhang.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Spring5基础</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Spring5基础</h1>
+        <div class="stuff">
+            <span>八月 27, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Spring/" rel="tag">Spring</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Spring-5-基础"><a href="#Spring-5-基础" class="headerlink" title="Spring 5 基础"></a>Spring 5 基础</h1><blockquote>
+<p>学习资料：尚硅谷-Spring5框架2020最新版教程</p>
+<p><a href="https://www.bilibili.com/video/BV1Vf4y127N5" target="_blank" rel="noopener">视频链接</a></p>
+<p><a href="https://spring.io/" target="_blank" rel="noopener">Spring官网</a></p>
+</blockquote>
+<p><img src="https://2020-05-13-my-pic-bed.oss-cn-beijing.aliyuncs.com/2020-05-picgo/spring-overview.png" alt=""></p>
+<h2 id="1-Spring-概述"><a href="#1-Spring-概述" class="headerlink" title="1. Spring 概述"></a>1. Spring 概述</h2><ol>
+<li>Spring 是轻量级的开源的JavaEE框架</li>
+<li>Spring 可以减少企业应用开发的复杂性</li>
+<li>Spring 有两个核心部分：IoC和AOP<ol>
+<li>IoC：Inversion of Control，控制反转，把创建对象的过程交给Spring进行管理。</li>
+<li>AOP：Aspect Oriented Program，面向切面编程，不修改源代码进行功能增强。</li>
+</ol>
+</li>
+<li>Spring 特点<ul>
+<li>方便解耦，简化开发</li>
+<li>AOP编程支持</li>
+<li>方便程序测试</li>
+<li>方便和其他框架进行整合</li>
+<li>方便进行事务操作</li>
+<li>降低API开发难度</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-IoC"><a href="#2-IoC" class="headerlink" title="2. IoC"></a>2. IoC</h2><h3 id="2-1-什么是IoC？"><a href="#2-1-什么是IoC？" class="headerlink" title="2.1 什么是IoC？"></a>2.1 什么是IoC？</h3><p><a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank" rel="noopener">Inversion of Control</a>，是软件工程中的一个编程原则。不同于传统控制流，IoC反转了控制流。在IoC中，应用程序从一个通用框架(如Spring)中接收控制流。与传统的过程编程相比，具有这种设计的软件架构会反转控制：在传统的编程中，表达程序目的的自定义代码调用可重用的库来处理通用任务，但是在控制反转的情况下，是框架调用自定义或特定于任务的代码。</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/AD-milk/p/13375178.html" target="_blank" rel="noopener">依赖倒置、依赖注入、控制反转都是啥？</a></p>
+</blockquote>
+<h3 id="2-2-IoC有什么用？"><a href="#2-2-IoC有什么用？" class="headerlink" title="2.2 IoC有什么用？"></a>2.2 IoC有什么用？</h3><p>控制反转又被称为”Hollywood Principle: Don’t call us, we’ll call you”。服务于以下设计目的：</p>
+<ul>
+<li>解耦功能的执行和实现</li>
+<li>提高软件模块化程度</li>
+<li>提高软件的可扩展性</li>
+</ul>
+<h3 id="2-3-IoC原理"><a href="#2-3-IoC原理" class="headerlink" title="2.3 IoC原理"></a>2.3 IoC原理</h3><p>技术支持：xml解析+工厂模式+反射机制。</p>
+<p>IoC思想基于IoC容器完成，IoC容器底层是一个对象工厂。</p>
+<p>Spring提供两个接口实现IoC容器：</p>
+<ul>
+<li>BeanFactory: IoC容器的基本实现，是Spring内部使用的接口，不提供给开发人员进行使用；加载配置文件时不会创建对象，在使用它获取对象时才会创建对象。</li>
+<li>ApplicationContext: BeanFactory的子接口，提供更多的功能，一般由开发人员进行使用；加载配置文件时就会创建配置文件中定义的对象。</li>
+</ul>
+<h3 id="2-4-Bean管理"><a href="#2-4-Bean管理" class="headerlink" title="2.4 Bean管理"></a>2.4 Bean管理</h3><p>（1）Bean管理指操作：</p>
+<ul>
+<li>创建对象</li>
+<li>注入对象的属性</li>
+</ul>
+<p>（2）实现方式：</p>
+<ul>
+<li>基于xml配置文件</li>
+<li>基于注解</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">&lt;!--xml文件中创建对象，默认执行无参构造方法--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--id属性：唯一标识--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--class属性：类的全路径--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"learn.spring.User"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>（3）基于xml文件注入对象的属性</p>
+<ul>
+<li><p>依赖注入(Dependency Injection)</p>
+<ol>
+<li><p>使用setter方法注入属性</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--创建对象，默认执行无参构造方法--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"learn.spring.User"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--使用property完成属性注入，其通过调用相应的setter方法设置属性</span></span><br><span class="line"><span class="comment">        name属性：属性名称</span></span><br><span class="line"><span class="comment">        value属性：属性的值（字符串形式）</span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">value</span>=<span class="string">"18"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"孙悟空"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--设置空值--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"age"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">null</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--设置特殊字符</span></span><br><span class="line"><span class="comment">	1.使用xml中的实体引用&amp;lt(&lt;),&amp;gt(&gt;),&amp;amp(&amp;),&amp;apos('),&amp;quot(")</span></span><br><span class="line"><span class="comment">	2.使用CDATA,CDATA 部分中的所有内容都会被解析器忽略。</span></span><br><span class="line"><span class="comment">	CDATA 部分由 "&lt;![CDATA[" 开始，由 "]]&gt;" 结束：</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><p>使用有参构造方法注入属性</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"vipUser"</span> <span class="attr">class</span>=<span class="string">"learn.spring.User"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--通过有参构造注入属性，name属性指定属性名称(使用index属性也可以，但不推荐)，value指定值--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">value</span>=<span class="string">"23"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"唐三藏"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--如果需要注入外部bean(属性类型为自定义类)，使用ref属性代替value--&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ul>
+<li><p>注入外部bean</p>
+</li>
+<li><p>注入内部bean和级联赋值</p>
+</li>
+<li><p>注入数组、list、map、set……</p>
+</li>
+</ul>
+<p>（4）普通bean和工厂bean</p>
+<ul>
+<li>普通bean：在xml文件中定义的bean类型与返回类型一致</li>
+<li>工厂bean：在xml文件中定义的bean类型与返回类型可能不一致<br>实现：类实现FactoryBean接口</li>
+</ul>
+<p>（5）bean的作用域</p>
+<ul>
+<li>Spring中可以设置bean实例是单实例还是多实例</li>
+<li>默认情况下是单实例的对象</li>
+<li>可以通过设置bean的<code>scope</code>属性的值改变为多实例<ol>
+<li>prototype：多实例，在调用getBean方法时才会创建对象</li>
+<li>singleton：单实例，默认值，加载配置文件时就会创建对象</li>
+</ol>
+</li>
+</ul>
+<p>（6）bean的生命周期</p>
+<ul>
+<li>生命周期：对象从创建到销毁的过程</li>
+<li>bean的生命周期<ol>
+<li>通过构造器创建bean实例(无参构造方法)</li>
+<li>为bean实例的属性设置值和对其他bean的引用(setter方法)</li>
+<li>把bean实例传给后置处理器的postProcessBeforeInitialization方法</li>
+<li>调用bean的初始化方法(需要配置bean的<code>init-method</code>属性)</li>
+<li>把bean实例传给后置处理器的postProcessAfterInitialization方法</li>
+<li>bean的使用</li>
+<li>容器关闭时，调用bean的销毁方法(需要配置bean的<code>destroy-method</code>属性)</li>
+</ol>
+</li>
+</ul>
+<p>（7）xml自动装配</p>
+<ul>
+<li>自动装配：指根据指定的装配规则（按照属性名称或属性类型），Spring自动将匹配的属性值进行注入。</li>
+<li>实现：借助bean的<code>autowire</code>属性，其有以下两个取值<ol>
+<li>byName：根据属性名称注入，注入的bean的id和类属性名称一致</li>
+<li>byType：根据类型注入，此时类型应当唯一，否则无法自动装配</li>
+</ol>
+</li>
+</ul>
+<p>（8）properties+xml完成注入</p>
+<p>（9）基于注解完成注入</p>
+<ul>
+<li><p>注解：代码的特殊标记</p>
+<ol>
+<li>格式：@注解名称(属性名称=属性值……)</li>
+<li>注解可以作用于类、类方法、类属性等上</li>
+<li>使用注解可以简化xml配置</li>
+</ol>
+</li>
+<li><p>Spring中创建bean对象的注解</p>
+<ol>
+<li>@Component</li>
+<li>@Service</li>
+<li>@Controller</li>
+<li>@Repository</li>
+</ol>
+<p><em>*上面4个注解的功能相同，均可以用于创建bean实例，但是习惯上在不同的软件层用不同的注解</em></p>
+</li>
+<li><p>基于注解完成属性注入</p>
+<ol>
+<li>@autowired:根据属性类型自动装配</li>
+<li>@Qualifier:根据属性名称进行注入</li>
+<li>@Resource:可以根据类型，也可以根据名称进行注入</li>
+<li>@Value:注入普通类型属性</li>
+</ol>
+</li>
+</ul>
+<h2 id="3-AOP"><a href="#3-AOP" class="headerlink" title="3. AOP"></a>3. AOP</h2><h3 id="3-1-什么是AOP"><a href="#3-1-什么是AOP" class="headerlink" title="3.1 什么是AOP"></a>3.1 什么是AOP</h3><p><a href="https://en.wikipedia.org/wiki/Aspect-oriented_programming" target="_blank" rel="noopener">aspect-oriented programming</a> (AOP), 面向切面编程，功能模块化，不通过修改源代码而是加更多的模块来拓展功能。</p>
+<h3 id="3-2-AOP底层原理"><a href="#3-2-AOP底层原理" class="headerlink" title="3.2 AOP底层原理"></a>3.2 AOP底层原理</h3><p>底层使用动态代理，有以下两种情况：</p>
+<ol>
+<li><p>有接口时，使用JDK动态代理，创建接口实现类的代理对象，增强类的方法。</p>
+<ol>
+<li><p>使用java.lang.reflect.Proxy类里的方法创建代理对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> Object</span><br><span class="line">newProxyInstance(</span><br><span class="line">    ClassLoader loader, </span><br><span class="line">    Class&lt;?&gt;[] interfaces,</span><br><span class="line">    InvocationHandler h)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li><p>编写JDK动态代理代码:</p>
+<ol>
+<li>创建接口，定义方法</li>
+<li>创建接口实现类，实现方法</li>
+<li>使用Proxy类创建接口代理对象</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li>没有接口时，使用CGLIB动态代理，创建子类的代理对象，增强类的方法。</li>
+</ol>
+<h3 id="3-3-AOP术语"><a href="#3-3-AOP术语" class="headerlink" title="3.3 AOP术语"></a>3.3 AOP术语</h3><ol>
+<li><code>连接点</code>：类中哪些方法可以被增强，这些方法就被成为连接点。</li>
+<li><code>切入点</code>：实际被增强的方法，称为切入点。</li>
+<li><code>通知</code>：实际增强的逻辑部分，也叫<code>增强</code>，主要有五种类型：<ol>
+<li>前置通知<code>@Before</code></li>
+<li>后置通知<code>@AfterReturning</code></li>
+<li>环绕通知<code>@Around</code></li>
+<li>异常通知<code>@AfterThrowing</code></li>
+<li>最终通知<code>@After</code></li>
+</ol>
+</li>
+<li><code>切面</code>：把<code>通知</code>应用到<code>切入点</code>的过程。</li>
+</ol>
+<h3 id="3-4-AOP操作"><a href="#3-4-AOP操作" class="headerlink" title="3.4 AOP操作"></a>3.4 AOP操作</h3><p>Spring框架一般都是基于AspectJ实现AOP操作；注意，AspectJ不是Spring的组成部分，而是独立的AOP框架，一般把AspectJ和Spring框架一起使用，进行AOP操作。</p>
+<p>基于AspectJ实现AOP操作有两种基本方式：</p>
+<ol>
+<li>基于xml配置文件实现</li>
+<li>基于注解方法实现</li>
+</ol>
+<p>通过<code>切入点表达式</code>指定进行增强的方法，语法结构：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">execution([权限修饰符][返回值类型][类全路径][方法名]([参数列表]))</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-基于注解实现AOP"><a href="#3-5-基于注解实现AOP" class="headerlink" title="3.5 基于注解实现AOP"></a>3.5 基于注解实现AOP</h3><ol>
+<li><p>创建待增强类</p>
+</li>
+<li><p>创建增强类，编写增强逻辑（5种通知）</p>
+</li>
+<li><p>进行通知的配置（配置文件或注解）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--注解扫描--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"learn.spring.aop"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--生成代理--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">aop:aspectj-autoproxy</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(basePackages = &#123;<span class="string">"learn.spring.aop"</span>&#125;)</span><br><span class="line"><span class="meta">@EnableAspectJAutoProxy</span>(proxyTargetClass = <span class="keyword">true</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>相同的切入点抽取<code>@Pointcut</code></p>
+</li>
+</ol>
+<h3 id="3-6-基于xml配置文件实现"><a href="#3-6-基于xml配置文件实现" class="headerlink" title="3.6 基于xml配置文件实现"></a>3.6 基于xml配置文件实现</h3><p>实际使用AOP多用注解，灵活方便，基于配置文件了解下即可。</p>
+<ol>
+<li>创建两个类，增强类和被增强类，创建方法。</li>
+<li>在Spring 配置文件中创建两个类对象。</li>
+<li>在Spring配置文件中配置切入点。</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Era-The%20Mass.flac'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Klaus%20Badelt-He%27s%20a%20Pirate.flac'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Ramin%20Djawadi-Game%20Of%20Thrones.flac'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Thomas%20Bergersen%26Two%20Steps%20From%20Hell-Black%20Blade.flac'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Two%20Steps%20From%20Hell-Empire%20Of%20Angels.flac'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Two%20Steps%20From%20Hell-Star%20Sky%20%28Orchestral%29.flac'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='5b7bd8b8038fc288e143'
+        data-cs='0cba3b34c218c7cd5992e059041025cd976536be'
+        data-r='Hodge-Zhang.github.io'
+        data-o='Hodge-Zhang'
+        data-a='Hodge-Zhang'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
