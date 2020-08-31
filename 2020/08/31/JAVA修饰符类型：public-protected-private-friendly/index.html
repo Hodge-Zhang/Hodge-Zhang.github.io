@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JAVA修饰符类型(public,protected,private,friendly) - Hodge</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Hodge,"> 
+    <meta name="description" content="1. 概述
+public修饰的类、类属变量及方法，包内及包外的任何类均可以访问；
+protected修饰的类、类属变量及方法，包内的任何类，及包外的那些继承了此类的子类才能访问；
+private修饰,"> 
+    <meta name="author" content="Hodge-Zhang"> 
+    <link rel="alternative" href="atom.xml" title="Hodge" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hodge</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://hodge-zhang.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">JAVA修饰符类型(public,protected,private,friendly)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">JAVA修饰符类型(public,protected,private,friendly)</h1>
+        <div class="stuff">
+            <span>八月 31, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><ol>
+<li><code>public</code>修饰的类、类属变量及方法，包内及包外的任何类均可以访问；</li>
+<li><code>protected</code>修饰的类、类属变量及方法，包内的任何类，及包外的那些继承了此类的子类才能访问；</li>
+<li><code>private</code>修饰的类、类属变量及方法，包内包外的任何类均不能访问；</li>
+<li>如果一个类、类属变量及方法不以这三种修饰符来修饰，它就是<code>friendly</code>类型的，那么包内的任何类都可以访问它，而包外的任何类都不能访问它(包括包外继承了此类的子类)，因此，这种类、类属变量及方法对包内的其他类是友好的，开放的，而对包外的其他类是关闭的。</li>
+</ol>
+<h2 id="2-类："><a href="#2-类：" class="headerlink" title="2. 类："></a>2. 类：</h2><p><em>访问修饰符</em> <em>修饰符</em> <code>class</code> <em>类名称</em> <code>extends</code> <em>父类名称</em> <code>implement</code> <em>接口名称</em></p>
+<p>（访问修饰符与修饰符的位置可以互换）</p>
+<table>
+<thead>
+<tr>
+<th>访问修饰符</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>名称</strong></td>
+<td><strong>说明</strong></td>
+<td><strong>备注</strong></td>
+</tr>
+<tr>
+<td>public</td>
+<td>可以被所有类访问（使用）</td>
+<td>public类必须定义在和类名相同的同名文件中</td>
+</tr>
+<tr>
+<td>package</td>
+<td>可以被同一个包中的类访问（使用）</td>
+<td>默认的访问权限，可以省略此关键字，可以定义在和public类的同一个文件中</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>名称</strong></td>
+<td><strong>说明</strong></td>
+<td><strong>备注</strong></td>
+</tr>
+<tr>
+<td>final</td>
+<td>使用此修饰符的类不能够被继承</td>
+<td></td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>如果要使用abstract类，之前必须首先建一个继承abstract类的新类，新类中实现abstract类中的抽象方法。</td>
+<td>类只要有一个abstract方法，类就必须定义为abstract，但abstract类不一定非要保护abstract方法不可</td>
+</tr>
+</tbody></table>
+<h2 id="3-变量"><a href="#3-变量" class="headerlink" title="3. 变量"></a>3. 变量</h2><ol>
+<li>Java中没有全局变量，只有方法变量、实例变量（类中的非静态变量）、类变量（类中的静态变量）。</li>
+<li>方法中的变量不能够有访问修饰符。所以下面<strong>访问修饰符表</strong>仅针对于在类中定义的变量。</li>
+<li>声明实例变量时，如果没有赋初值，将被初始化为null（引用类型）或者0、false（原始类型）。</li>
+<li>可以通过实例变量初始化器来初始化较复杂的实例变量，实例变量初始化器是一个用{}包含的语句块，在类的构造器被调用时运行，运行于父类构造器之后，构造器之前。</li>
+<li>类变量（静态变量）也可以通过类变量初始化器来进行初始化，类变量初始化器是一个用static{}包含的语句块，只可能被初始化一次。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>访问修饰符</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>名称</strong></td>
+<td><strong>说明</strong></td>
+<td><strong>备注</strong></td>
+</tr>
+<tr>
+<td>public</td>
+<td>可以被任何类访问</td>
+<td></td>
+</tr>
+<tr>
+<td>protected</td>
+<td>可以被同一包中的所有类访问 可以被所有子类访问</td>
+<td>子类没有在同一包中也可以访问</td>
+</tr>
+<tr>
+<td>private</td>
+<td>只能够被当前类的方法访问</td>
+<td></td>
+</tr>
+<tr>
+<td>缺省(default)</td>
+<td>可以被同一包中的所有类访问</td>
+<td>如果子类没有在同一个包中，也不能访问</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>名称</strong></td>
+<td><strong>说明</strong></td>
+<td><strong>备注</strong></td>
+</tr>
+<tr>
+<td>static</td>
+<td>静态变量（又称为类变量，其它的称为实例变量）</td>
+<td>可以被类的所有实例共享。 并不需要创建类的实例就可以访问静态变量</td>
+</tr>
+<tr>
+<td>final</td>
+<td>常量，值只能够分配一次，不能更改</td>
+<td>注意不要使用const，虽然它和C、C++中的const关键字含义一样 可以同static一起使用，避免对类的每个实例维护一个拷贝</td>
+</tr>
+<tr>
+<td>transient</td>
+<td>告诉编译器，在类对象序列化的时候，此变量不需要持久保存</td>
+<td>主要是因为改变量可以通过其它变量来得到，使用它是为了性能的问题</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>指出可能有多个线程修改此变量，要求编译器优化以保证对此变量的修改能够被正确的处理</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="4-方法"><a href="#4-方法" class="headerlink" title="4. 方法"></a>4. 方法</h2><p><em>访问修饰符</em> <em>修饰符</em> <em>返回类型</em> <strong>方法名称</strong>（<em>参数列表*）<code>throws</code> *违例列表</em></p>
+<ol>
+<li>类的构造器方法不能够有修饰符、返回类型和throws子句。</li>
+<li>类的构造器方法被调用时，它首先调用父类的构造器方法，然后运行实例变量和静态变量的初始化器，然后才运行构造器本身。</li>
+<li>如果构造器方法没有显示的调用一个父类的构造器，那么编译器会自动为它加上一个默认的super()，而如果父类又没有默认的无参数构造器，编译器就会报错。super必须是构造器方法的第一个子句。</li>
+<li>注意理解private构造器方法的使用技巧。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>访问修饰符</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>名称</strong></td>
+<td><strong>说明</strong></td>
+<td><strong>备注</strong></td>
+</tr>
+<tr>
+<td>public</td>
+<td>可以从所有类访问</td>
+<td></td>
+</tr>
+<tr>
+<td>protected</td>
+<td>可以被同一包中的所有类访问 可以被所有子类访问</td>
+<td>子类没有在同一包中也可以访问</td>
+</tr>
+<tr>
+<td>private</td>
+<td>只能够被当前类的方法访问</td>
+<td></td>
+</tr>
+<tr>
+<td>缺省(default)</td>
+<td>可以被同一包中的所有类访问</td>
+<td>如果子类没有在同一个包中，也不能访问</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>名称</strong></td>
+<td><strong>说明</strong></td>
+<td><strong>备注</strong></td>
+</tr>
+<tr>
+<td>static</td>
+<td>静态方法（又称为类方法，其它的称为实例方法）</td>
+<td>提供不依赖于类实例的服务 并不需要创建类的实例就可以访问静态方法</td>
+</tr>
+<tr>
+<td>final</td>
+<td>防止任何子类重载该方法</td>
+<td>注意不要使用const，虽然它和C、C++中的const关键字含义一样 可以同static一起使用，避免对类的每个实例维护一个拷贝</td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>抽象方法，类中已声明而没有实现的方法</td>
+<td>不能将static方法、final方法或者类的构造器方法声明为abstract</td>
+</tr>
+<tr>
+<td>native</td>
+<td>用该修饰符定义的方法在类中没有实现，而大多数情况下该方法的实现是用C、C++编写的。</td>
+<td>参见Sun的Java Native接口（JNI），JNI提供了运行时加载一个native方法的实现，并将其于一个Java类关联的功能</td>
+</tr>
+<tr>
+<td>synchronized</td>
+<td>支持多线程(线程安全)</td>
+<td>当一个此方法被调用时，没有其它线程能够调用该方法，其它的synchronized方法也不能调用该方法，直到该方法返回</td>
+</tr>
+</tbody></table>
+<h2 id="5-接口"><a href="#5-接口" class="headerlink" title="5. 接口"></a>5. 接口</h2><p><em>访问修饰符</em> <code>interface</code> <strong>接口名称</strong> <code>extends</code> <em>接口列表</em></p>
+<ol>
+<li>接口不能够定义其声明的方法的任何实现。</li>
+<li>接口中的变量总是需要定义为“public static final 接口名称”，但可以不包含这些修饰符，编译器默认就是这样，显示的包含修饰符主要是为了程序清晰。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>访问修饰符</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>名称</strong></td>
+<td><strong>说明</strong></td>
+<td><strong>备注</strong></td>
+</tr>
+<tr>
+<td>public</td>
+<td>所有</td>
+<td></td>
+</tr>
+<tr>
+<td>无访问修饰符（默认）</td>
+<td>同一个包内</td>
+<td></td>
+</tr>
+</tbody></table>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Era-The%20Mass.flac'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Klaus%20Badelt-He%27s%20a%20Pirate.flac'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Ramin%20Djawadi-Game%20Of%20Thrones.flac'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Thomas%20Bergersen%26Two%20Steps%20From%20Hell-Black%20Blade.flac'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Two%20Steps%20From%20Hell-Empire%20Of%20Angels.flac'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='https://2020-05-13-my-online-music.oss-cn-beijing.aliyuncs.com/2020-05-blob-music/Two%20Steps%20From%20Hell-Star%20Sky%20%28Orchestral%29.flac'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='5b7bd8b8038fc288e143'
+        data-cs='0cba3b34c218c7cd5992e059041025cd976536be'
+        data-r='Hodge-Zhang.github.io'
+        data-o='Hodge-Zhang'
+        data-a='Hodge-Zhang'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
